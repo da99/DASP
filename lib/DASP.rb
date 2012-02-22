@@ -20,36 +20,36 @@ class DASP
     .reject { |s| s.strip.empty? }
   end
   
-   def map
+  def map
     t.map( &(grab.to_sym) )
-   end
+  end
 
-   def contains 
-     pattern = grab
-     t.select { |s| s[ pattern ] }
-   end
+  def contains 
+    pattern = grab
+    t.select { |s| s[ pattern ] }
+  end
 
-   def print
-     super t
-   end
-
-   def puts
+  def print
     super t
-   end
-   
-   private # =======================================
-  
-   def grab
-     args.shift
-   end
+  end
 
-   def update val
-     @t = val
-   end
+  def puts
+    super t
+  end
 
-   def update_using cmd
-     @t = public_send(cmd)
-   end
-  
+  private # =======================================
+
+  def grab
+    args.shift
+  end
+
+  def update val
+    @t = val
+  end
+
+  def update_using cmd
+    @t = public_send(cmd)
+  end
+
 end # === DASP
 
