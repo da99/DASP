@@ -12,8 +12,8 @@ exit(0) if args.empty? && target.nil?
 
 dasp ||= DASP.new(target, args)
 
-while !args.empty?
-  cmd = args.shift 
+while !dasp.args.empty?
+  cmd = dasp.send(:grab) 
   case cmd
   when "silent"
     puts_it = false

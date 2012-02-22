@@ -25,7 +25,8 @@ class DASP
    end
 
    def contains 
-     t.select { |s| s[ grab ] }
+     pattern = grab
+     t.select { |s| s[ pattern ] }
    end
 
    def print
