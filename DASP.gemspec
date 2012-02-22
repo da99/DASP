@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["da99"]
   s.email       = ["i-hate-spam-45671204@mailinator.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Various commands for personal use.}
+  s.description = %q{Mainly used as: DASP commands INPUT}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake"
   s.add_development_dependency 'Bacon_Colored'
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'Exit_Zero'
   
   # s.rubyforge_project = "DASP"
   # specify any dependencies here; for example:

@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+# -*- ruby -*-
+#
+
+require 'DASP'
+args = ARGV.dup
+target = (STDIN.tty?) ? args.pop : $stdin.read
+puts_it = true
+
+exit(0) if args.empty? && target.nil?
+
+dasp ||= DASP.new(target, args)
+
+while !args.empty?
+  cmd = args.shift 
+  case cmd
+  when "silent"
+    puts_it = false
+  else
+    dasp.update_using cmd
+  end
+end
+
+puts(dasp.t) if puts_it

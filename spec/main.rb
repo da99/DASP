@@ -3,6 +3,12 @@ require File.expand_path('spec/helper')
 require 'DASP'
 require 'Bacon_Colored'
 require 'pry'
+require 'Exit_Zero'
+
+def BIN cmd
+  Exit_Zero("bundle exec DASP #{cmd}")
+end
+
 
 
 # ======== Include the tests.
