@@ -5,8 +5,8 @@ require 'Bacon_Colored'
 require 'pry'
 require 'Exit_Zero'
 
-def BIN cmd
-  Exit_Zero("bundle exec DASP #{cmd}")
+def BIN cmd, *args
+  Exit_Zero("bundle exec DASP #{cmd}", *args)
 end
 
 

@@ -3,6 +3,7 @@
 #
 
 require 'DASP'
+
 args = ARGV.dup
 target = (STDIN.tty?) ? args.pop : $stdin.read
 puts_it = true
@@ -17,7 +18,7 @@ while !args.empty?
   when "silent"
     puts_it = false
   else
-    dasp.update_using cmd
+    dasp.send :update_using, cmd
   end
 end
 
