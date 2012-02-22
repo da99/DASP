@@ -29,6 +29,14 @@ class DASP
     t.select { |s| s[ pattern ] }
   end
 
+  def index
+    t[ Integer(grab) ]
+  end
+  
+  def line
+    t[ Integer(grab) - 1 ]
+  end
+
   def print
     super t
   end

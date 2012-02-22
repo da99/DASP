@@ -34,3 +34,21 @@ describe "DASP ARRAY contains word INPUT" do
   
 end # === DASP <to array> contains word INPUT
 
+describe "DASP ARRAY index INTEGER INPUT" do
+  
+  it "selects nth element of array" do
+    DASP.new( %w{ a b c }, '1').index
+    .should == 'b'
+  end
+  
+end # === DASP ARRAY index INTERGER INPUT
+
+describe "DASP ARRAY line INTEGER INPUT" do
+  
+  it "selects nth-1 element of array" do
+    DASP.new( %w{ a b c d e f }, '3').line
+    .should == 'c'
+  end
+  
+end # === DASP ARRAY line INTEGER INPUT
+
