@@ -9,6 +9,16 @@ def BIN cmd, *args
   Exit_Zero("bundle exec DASP #{cmd}", *args)
 end
 
+def capture_stdout
+  orig = $stdout
+  str = StringIO.new
+  $stdout = str
+  yield
+  str.rewind
+  str.readlines.join("\n")
+ensure 
+  $stdout = orig
+end
 
 
 # ======== Include the tests.

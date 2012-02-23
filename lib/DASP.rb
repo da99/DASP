@@ -38,14 +38,33 @@ class DASP
   end
 
   def print
-    super t
+    super lookup(t)
   end
 
   def puts
-    super t
+    super lookup(t)
+  end
+
+  def cron_log
+    "/var/log/syslog"
+  end
+
+  def read
+    raise ArgumentError, "Not a file: #{t}" unless File.file?(t)
+    File.read t
   end
 
   private # =======================================
+
+  def lookup val, must_exist = false
+    case val
+    when 'icons_dir'
+      "/usr/share/icons/Humanity/places/64"
+    else
+      raise ArgumentError, "Unknown lookup value: #{val.inspect}" if must_exist
+      val
+    end
+  end
 
   def grab
     args.shift

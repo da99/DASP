@@ -52,3 +52,14 @@ describe "DASP ARRAY line INTEGER INPUT" do
   
 end # === DASP ARRAY line INTEGER INPUT
 
+describe "DASP print icons_dir" do
+  
+  it "prints string to location of icons dir" do
+    capture_stdout {
+      DASP.new('icons_dir').print
+    }.strip
+    .should.match %r!/share/!
+  end
+  
+end # === DASP icons_dir print icons_dir
+
